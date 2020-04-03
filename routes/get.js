@@ -16,7 +16,7 @@ router.get('/',(req,res) => {
 router.get('/:id',(req,res) => {
     const jobsID = req.params.id;
 
-    db.getDB().collection(collection).findOneAndGet({_id : db.getPrimaryKey(jobsID)},(err,result) => {
+    db.getDB().collection(collection).findOne({_id : db.getPrimaryKey(jobsID)},(err,result) => {
         if(err)
             console.log(err);
         else{
