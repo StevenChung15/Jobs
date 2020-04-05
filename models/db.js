@@ -51,5 +51,6 @@ const getDB = () => {
     return state.db;
 }
 
+module.exports = mongoose.model('Schema', schema);
+module.exports = {getDB,connect,getPrimaryKey};
 
-module.exports = {getDB,connect,getPrimaryKey},mongoose.model('model',schema);

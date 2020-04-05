@@ -6,8 +6,8 @@ const Joi = require('joi');
 
 router.post('/',(req,res,next) => {
     const userInput = req.body;
-
-    Joi.validate(userInput,schema,(err,result) => {
+   
+    Joi.validate(userInput,(err,result) => {
         if(err){
             const error = new Error("Invalid Input");
             error.status = 400;
@@ -25,7 +25,7 @@ router.post('/',(req,res,next) => {
             });
         }
     })
-});
+}); 
 
 
 module.exports = router; 

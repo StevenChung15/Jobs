@@ -1,9 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const Joi = require('joi');
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath();
 
 app.use(bodyParser.json());
+app.use(express.static(pathToSwaggerUi));
 
 //Import Database
 const db = require("./models/db");
